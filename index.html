@@ -1,39 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@100;300;400;900&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    /* BLOQUE 1 */
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .bloque-uno-menu__movil {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      margin: 10px;
+
+    }
+
+    .bloque-uno-menu__movil__cerrar{
+      display: none;
+      z-index: 99;
+    }
+
+    .contenido{
+      position: absolute;
+    
+      background-color: bisque;
+      right: 0;
+      top: 0;
+    }
+
+    /*FIN BLOQUE 1 */
+
+    /* BLOQUE 2 */
+    .bloque-dos-cabecera_img-cabecera-movil img {
+      width: 100%;
+      height: auto;
+
+    }
+
+    .bloque-dos-cabecera_body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
+      align-content: center;
+    }
+
+    .bloque-dos-cabecera_body-img-parnet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      align-content: center;
+
+    }
+
+    .bloque-dos-cabecera_body-img-parnet img {
+      width: 50px;
+      height: auto;
+      padding: 5px;
+      margin: 5px;
+      margin-top: 13%;
+    }
+
+    .bloque-dos-cabecera_body__titulo {
+      font-family: 'Epilogue';
+      font-size: 8vw;
+      font-weight: 700;
+      margin-top: 10%;
+      margin-bottom: 0;
+    }
+
+
+    .bloque-dos-cabecera_body__contenido {
+      font-family: 'Epilogue';
+      font-size: 16px;
+      font-weight: 300;
+      padding: 3% 8%;
+      margin-top: 0;
+    }
+
+    .bloque-dos-cabecera_body__bton {
+      background-color: black;
+      border-radius: 16px;
+      border-color: black;
+    }
+
+    .bloque-dos-cabecera_body__bton p {
+      font-family: 'Epilogue';
+      color: white;
+      font-size: 14px;
+      margin: 10px 20px;
+    }
+
+
+    /*FIN BLOQUE 2 */
   </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+        $(".bloque-uno-menu__movil__btonMenu").click(function(){
+          $(this).css('display','none');
+          $("body").css('background-color','aqua');
+          $(".contenido").css({
+            'height':'100vh',
+            'width':'65%'
+        });
+          $(".bloque-uno-menu__movil__cerrar").css('display','block');
+          $("body").css('background-color','aqua');
+        });
+
+        $(".bloque-uno-menu__movil__cerrar").click(function(){
+          $(this).css('display','none');
+          $(".contenido").css({
+            'height':'100vh',
+            'width':'0'
+        });
+          $(".bloque-uno-menu__movil__btonMenu").css('display','block');
+          $("body").css('background-color','white');
+        });
+  });
+  </script>
 </head>
+
 <body>
 
-  Features
-  Company
-  Careers
-  About
+  <header>
+    <nav class="bloque-uno-menu">
+      <section class="bloque-uno-menu__movil">
+          <img  src="\images\logo.svg">
+          <img class="bloque-uno-menu__movil__btonMenu"src="\images\icon-menu.svg">
+          <img class="bloque-uno-menu__movil__cerrar"src="\images\icon-close-menu.svg">
+          
+      </section>
 
-  Login
-  Register
+      <section class="bloque-uno-menu__pc">
+      </section>
 
-  Make remote work
+    </nav>
+  </header>
 
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
+  <section class="bloque-dos-cabecera">
+    <article class="bloque-dos-cabecera_img-cabecera-movil">
+      <img src="\images\image-hero-mobile.png">
+    </article>
 
-  Learn more
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <article class="bloque-dos-cabecera_body">
+      <p class="bloque-dos-cabecera_body__titulo">Make remote work</p>
+      <p class="bloque-dos-cabecera_body__contenido">Get your team in sync. no matter your location. Streamline
+        processes, create team rituals, and watch productivity soar</p>
+      <button class="bloque-dos-cabecera_body__bton">
+        <p>Learn more</p>
+      </button>
+      <div class="bloque-dos-cabecera_body-img-parnet">
+        <img src="\images\client-databiz.svg">
+        <img src="\images\client-audiophile.svg">
+        <img src="\images\client-meet.svg">
+        <img src="\images\client-maker.svg">
+
+      </div>
+
+    </article>
+  </section>
+
+  <section class="contenido">
+    
+
+  </section>
+
+
 </body>
+
 </html>

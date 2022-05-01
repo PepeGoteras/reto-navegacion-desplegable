@@ -1,112 +1,98 @@
-# Frontend Mentor - Intro section with dropdown navigation solution
+# Frontend Mentor - Solución de la sección de introducción con navegación desplegable
 
-This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Table of contents
+## Tabla de contenidos
 
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+- [Visión de conjunto](#visión)
+- [Utilidades](#Utilidades)
+- [El reto](#the-challenge)
+- [Captura de pantalla](#screenshot)
+- [Enlaces](#links)
+- [Mi proceso](#my-process)
+- [Construido con](#built-with)
+- [Lo que aprendí](#what-i-learned)
+- [Desarrollo continuo](#continued-development)
+- [Recursos útiles](#useful-resources)
+- [Autor](#author)
+- [Agradecimientos](#reconocimientos)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-## Overview
 
-### The challenge
+## Resumen
 
-Users should be able to:
 
-- View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
-- View the optimal layout for the content depending on their device's screen size
-- See hover states for all interactive elements on the page
+## Utilidades
 
-### Screenshot
+- Necesitio alguna forma de ver los 3 diseños de movil a la ver. Eso me hara perder menos tiempo.
+
+
+
+### El reto
+
+Los usuarios deben ser capaces de:
+
+- Ver los menús desplegables correspondientes en escritorio y móvil al interactuar con los enlaces de navegación
+- Ver la disposición óptima del contenido en función del tamaño de la pantalla de su dispositivo
+- Ver los estados de suspensión de todos los elementos interactivos de la página
+
+### Captura de pantalla
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+Añade una captura de pantalla de tu solución. La forma más sencilla de hacerlo es utilizar Firefox para ver su proyecto, hacer clic con el botón derecho del ratón en la página y seleccionar "Hacer una captura de pantalla". Puedes elegir una captura de pantalla de altura completa o una recortada en función de la longitud de la página. Si es muy larga, puede ser mejor recortarla.
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
+También puedes utilizar una herramienta como [FireShot](https://getfireshot.com/) para hacer la captura de pantalla. FireShot tiene una opción gratuita, así que no necesitas comprarla. 
 
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+Luego recorta/optimiza/edita tu imagen como quieras, añádela a tu proyecto y actualiza la ruta del archivo en la imagen de arriba.
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+**Nota: Borra esta nota y los párrafos anteriores cuando añadas tu captura de pantalla. Si prefieres no añadir una captura de pantalla, no dudes en eliminar toda esta sección.**
 
-### Links
+### Enlaces
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- URL de la solución: [Añada la URL de la solución aquí](https://your-solution-url.com)
+- URL del sitio en vivo: [Añadir la URL del sitio en vivo aquí](https://your-live-site-url.com)
 
-## My process
+## Mi proceso
 
-### Built with
+- Lo primero que me gusta hacer es separar todo en bloques.Para ello pongo un border en cada uno de ellos para diferenciarlos
 
-- Semantic HTML5 markup
-- CSS custom properties
+### Construido con
+
+- Marcaje semántico HTML5
+- Propiedades CSS personalizadas
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- Flujo de trabajo mobile-first
+- Metodologia BEM
 
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Prepros para maquetar en movil. desde el movil sin virtualizar el tamaño en el el navegador.
 
-### What I learned
+**Nota: Estos son sólo ejemplos. Borra esta nota y sustituye la lista anterior por tus propias elecciones**
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+### Lo que he aprendido
 
-To see how you can add code snippets, see below:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
-```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+### Desarrollo continuo
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+Utiliza esta sección para destacar las áreas en las que quieres seguir centrándote en futuros proyectos. Puede tratarse de conceptos con los que aún no se siente completamente cómodo o de técnicas que le resultaron útiles y que desea perfeccionar.
 
-### Continued development
+**Nota: elimine esta nota y el contenido de esta sección y sustitúyalo por sus propios planes de desarrollo continuo.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+### Recursos útiles
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- [Recurso de ejemplo 1](https://www.example.com) - Esto me ayudó por la razón XYZ. Me gustó mucho este patrón y lo utilizaré en el futuro.
+- Recurso de ejemplo 2](https://www.example.com) - Este es un artículo increíble que me ayudó a entender finalmente XYZ. Lo recomendaría a cualquiera que aún esté aprendiendo este concepto.
 
-### Useful resources
+**Nota: Elimina esta nota y sustituye la lista anterior por recursos que te hayan ayudado durante el reto. Podrían ser útiles para cualquiera que vea tu solución o para ti mismo cuando mires atrás en este proyecto en el futuro.**
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+## Autor
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- Sitio web - [Añade tu nombre aquí](https://www.your-site.com)
+- Mentor Frontend - [@su nombre de usuario](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@su nombre de usuario](https://www.twitter.com/yourusername)
 
-## Author
+**Nota: Elimine esta nota y añada/elimine/edite las líneas anteriores en función de los enlaces que desee compartir.
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+## Agradecimientos
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Aquí es donde puedes dar un consejo a cualquiera que te haya ayudado en este proyecto. Quizá hayas trabajado en equipo o te hayas inspirado en la solución de otra persona. Este es el lugar perfecto para darles crédito.
