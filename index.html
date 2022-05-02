@@ -14,7 +14,12 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    /* BLOQUE 1 */
+    :root {
+      --blanco: hsl(0, 0%, 98%);
+      --gris: hsl(0, 0%, 41%);
+      --negro: hsl(0, 0%, 8%);
+    }
+
     body {
       margin: 0;
       padding: 0;
@@ -29,23 +34,28 @@
 
     }
 
-    .bloque-uno-menu__movil__cerrar{
+    .bloque-uno-menu__movil__cerrar {
       display: none;
       z-index: 99;
     }
 
-    .contenido{
+    .contenidoMenu {
       position: absolute;
-    
-      background-color: bisque;
+      background-color: var(--blanco);
       right: 0;
       top: 0;
+      display: none;
+      flex-direction: column;
+      justify-content: left;
+      align-items: self-start;
+      padding: 5%;
+
     }
 
     /*FIN BLOQUE 1 */
 
     /* BLOQUE 2 */
-    .bloque-dos-cabecera_img-cabecera-movil img {
+    .bloque-dos-cabecera_img-cabecera-movil {
       width: 100%;
       height: auto;
 
@@ -95,57 +105,175 @@
     }
 
     .bloque-dos-cabecera_body__bton {
-      background-color: black;
+      background-color: var(--negro);
       border-radius: 16px;
-      border-color: black;
+      border-color: var(--negro);
     }
 
     .bloque-dos-cabecera_body__bton p {
       font-family: 'Epilogue';
-      color: white;
+      color: var(--blanco);
       font-size: 14px;
       margin: 10px 20px;
     }
 
 
     /*FIN BLOQUE 2 */
+
+    /*  BLOQUE 3 */
+    ul {
+      margin-top: 30%;
+      list-style-type: none;
+      padding: 0%;
+    }
+
+    li {
+      margin-bottom: 15%;
+    }
+
+    li a {
+      text-decoration: none;
+      font-family: 'Epilogue';
+      color: var(--gris);
+    }
+
+    .contenidoMenu img {
+      margin-left: 12px;
+      opacity: 1;
+    }
+
+    .contenidoMenu span {
+      margin-right: 7px;
+    }
+
+    .contenidoMenu_btons {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .contenidoMenu_btons button {
+      border-radius: 16px;
+      border-color: var(--gris);
+      color: var(--gris);
+    }
+
+    .contenidoMenu_desplegable {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contenidoMenu_desplegable a {
+      margin-left: 12%;
+      margin-top: 20%;
+      display: none;
+      flex-direction: row;
+      
+    }
+
+    .contenidoMenu_desplegable img {
+      margin-right: 8px;
+    }
+
+    .contenidoMenu_desplegable--mod {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contenidoMenu_desplegable--mod a {
+      margin-left: 22%;
+      margin-top: 20%;
+      display: none;
+      flex-direction: row;
+      
+    }
+
+    /*FIN BLOQUE 3 */
   </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-        $(".bloque-uno-menu__movil__btonMenu").click(function(){
-          $(this).css('display','none');
-          $("body").css('background-color','aqua');
-          $(".contenido").css({
-            'height':'100vh',
-            'width':'65%'
-        });
-          $(".bloque-uno-menu__movil__cerrar").css('display','block');
-          $("body").css('background-color','aqua');
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".bloque-uno-menu__movil__btonMenu").click(function () {
+        $(this).css('display', 'none');
+        $("body").css({
+          'background-color': 'rgba(0, 0, 0, 0.7)',
+          'z-index': '2'
         });
 
-        $(".bloque-uno-menu__movil__cerrar").click(function(){
-          $(this).css('display','none');
-          $(".contenido").css({
-            'height':'100vh',
-            'width':'0'
+        $("img , h1 , p").css({
+          'opacity': '0.5',
         });
-          $(".bloque-uno-menu__movil__btonMenu").css('display','block');
-          $("body").css('background-color','white');
+
+        $(".contenidoMenu").css({
+          'height': '100vh',
+          'width': '55%',
+          'display': 'flex'
         });
-  });
+        $(".bloque-uno-menu__movil__cerrar").css('display', 'block');
+
+        $(".bloque-uno-menu__movil__cerrar").css('opacity', '1');
+
+      });
+
+      $(".bloque-uno-menu__movil__cerrar").click(function () {
+        $(this).css('display', 'none');
+        $(".contenidoMenu").css({
+          'height': '100vh',
+          'width': '0',
+          'display': 'none'
+        });
+        $(".bloque-uno-menu__movil__btonMenu").css('display', 'block');
+        $("body").css('background-color', 'white');
+        $("img , h1 , p").css({
+          'opacity': '1',
+        });
+      });
+
+
+      $(".contenidoMenu__primer").click(function () {
+        if($(this).hasClass("activa-primer")){//tiene la clase activa primer?
+          //quitar clase
+          $(this).removeClass("activa-primer");
+          $(".contenidoMenu_desplegable a" ).css('display', 'none');
+          $(".contenidoMenu__primer img").attr("src","images/icon-arrow-down.svg");
+        }else{
+          //poner clase clase
+          $(this).addClass("activa-primer");
+          $(".contenidoMenu_desplegable a" ).css('display', 'flex');
+          $(".contenidoMenu__primer img").attr("src","images/icon-arrow-up.svg");
+        }
+      });
+
+      $(".contenidoMenu__segundo").click(function () {
+        if($(this).hasClass("activa-segundo")){//tiene la clase activa primer?
+          //quitar clase
+          $(this).removeClass("activa-segundo");
+          $(".contenidoMenu_desplegable--mod a" ).css('display', 'none');
+          $(".contenidoMenu__segundo img").attr("src","images/icon-arrow-down.svg");
+        }else{
+          //poner clase clase
+          $(this).addClass("activa-segundo");
+          $(".contenidoMenu_desplegable--mod a" ).css('display', 'flex');
+          $(".contenidoMenu__segundo img").attr("src","images/icon-arrow-up.svg");
+        }
+      });
+
+
+
+    });
   </script>
 </head>
 
 <body>
-
   <header>
     <nav class="bloque-uno-menu">
+
       <section class="bloque-uno-menu__movil">
-          <img  src="\images\logo.svg">
-          <img class="bloque-uno-menu__movil__btonMenu"src="\images\icon-menu.svg">
-          <img class="bloque-uno-menu__movil__cerrar"src="\images\icon-close-menu.svg">
-          
+        <img src="\images\logo.svg">
+        <img class="bloque-uno-menu__movil__btonMenu" src="\images\icon-menu.svg">
+        <img class="bloque-uno-menu__movil__cerrar" src="\images\icon-close-menu.svg">
       </section>
 
       <section class="bloque-uno-menu__pc">
@@ -155,34 +283,61 @@
   </header>
 
   <section class="bloque-dos-cabecera">
-    <article class="bloque-dos-cabecera_img-cabecera-movil">
-      <img src="\images\image-hero-mobile.png">
-    </article>
+    <img class="bloque-dos-cabecera_img-cabecera-movil" src="\images\image-hero-mobile.png">
 
     <article class="bloque-dos-cabecera_body">
-      <p class="bloque-dos-cabecera_body__titulo">Make remote work</p>
+      <h1 class="bloque-dos-cabecera_body__titulo">Make remote work</h1>
       <p class="bloque-dos-cabecera_body__contenido">Get your team in sync. no matter your location. Streamline
         processes, create team rituals, and watch productivity soar</p>
       <button class="bloque-dos-cabecera_body__bton">
         <p>Learn more</p>
       </button>
-      <div class="bloque-dos-cabecera_body-img-parnet">
+      <section class="bloque-dos-cabecera_body-img-parnet">
         <img src="\images\client-databiz.svg">
         <img src="\images\client-audiophile.svg">
         <img src="\images\client-meet.svg">
         <img src="\images\client-maker.svg">
-
-      </div>
-
+      </section>
     </article>
-  </section>
-
-  <section class="contenido">
-    
 
   </section>
 
+  <section class="contenidoMenu">
+    <ul>
+      <li>
+        <a class="contenidoMenu__primer" href="#">
+          <span>Features</span>
+          <img src="\images\icon-arrow-down.svg">
+        </a>
+        <section class="contenidoMenu_desplegable">
+          <a href="#"><img src="\images\icon-todo.svg"><span>Todo list</span></a>
+          <a href="#"><img src="\images\icon-calendar.svg"><span>Calendar</span></a>
+          <a href="#"><img src="\images\icon-reminders.svg"><span>Reminders</span></a>
+          <a href="#"><img src="\images\icon-planning.svg"><span>Planning</span></a>
+        </section>
+      </li>
+      <li>
+        <a class="contenidoMenu__segundo" href="#">
+          <span>Company</span>
+          <img src="\images\icon-arrow-down.svg">
+        </a>
+        <section class="contenidoMenu_desplegable--mod">
+          <a class="mod" href="#"><span>History</span></a>
+          <a class="mod" href="#"><span>Our Team</span></a>
+          <a class="mod" href="#"><span>Blog</span></a>
 
+        </section>
+      </li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <section class="contenidoMenu_btons">
+      <p>Login</p>
+      <button>
+        <p>Register</p>
+      </button>
+    </section>
+  </section>
 </body>
 
 </html>
