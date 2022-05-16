@@ -55,6 +55,8 @@
     .bloque-uno-menu__pc{
         display: none;
       }
+
+  
     /*FIN BLOQUE 1 */
 
     /* BLOQUE 2 */
@@ -98,7 +100,7 @@
       font-family: 'Epilogue';
       font-size: 8vw;
       font-weight: 700;
-      margin-top: 10%;
+      margin-top: 0;
       margin-bottom: 0;
     }
 
@@ -128,6 +130,37 @@
     /*FIN BLOQUE 2 */
 
     /*  BLOQUE 3 */
+    .bloque-uno-menu__pc  ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      margin-top: 0px;
+    }
+
+    .bloque-uno-menu__pc li a {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .bloque-uno-menu__pc_btons{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .bloque-uno-menu__pc_btons p{
+      margin:0px;
+    }
+
+    .bloque-uno-menu__pc_desplegable{
+      display: none;
+      flex-direction: column;
+    }
+    .bloque-uno-menu__pc_desplegable--mod{
+        display: none;
+        flex-direction: column;
+
+      }
+
     .contenidoMenuMovil ul {
       margin-top: 30%;
       list-style-type: none;
@@ -197,6 +230,8 @@
 
     }
 
+   
+
     /*FIN BLOQUE 3 */
     @media (min-width: 600px) {
       /* BLOQUE 1 */
@@ -206,6 +241,24 @@
 
       .bloque-uno-menu__pc{
         display: flex;
+        justify-content: space-between;
+        padding: 3% 3% 0% 3%;
+        align-items: flex-start;
+        height: 15vh;
+      }
+
+      .bloque-uno-menu__pc__left{
+
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .bloque-uno-menu__pc__left li{
+        margin-right: 16px;
+         width: 6em;
+      }
+      .bloque-uno-menu__pc li a {
+        width: max-content;
       }
       /*FIN BLOQUE 1 */
       /* BLOQUE 2 */
@@ -222,7 +275,9 @@
       .bloque-dos-cabecera {
         display: flex;
         flex-direction: row-reverse;
-      }
+        margin-left: 20%;
+        margin-right: 20%;
+        }
 
       .bloque-dos-cabecera_body {
         display: flex;
@@ -230,7 +285,7 @@
         justify-content: flex-start;
         text-align: inherit;
         align-items: flex-start;
-        padding: 3%;
+        padding: 0% 3% 3% 3%;
         /* align-content: flex-start; */
       }
 
@@ -249,7 +304,15 @@
       .bloque-dos-cabecera_body__titulo {
         font-size: 6vw;
       }
+      .bloque-dos-cabecera_body-img-parnet img {
+      width: 60px;
+     
+    }
 
+    .bloque-dos-cabecera_body   p, .bloque-dos-cabecera_body button , .bloque-dos-cabecera_body section {
+      margin-top: 8%;
+
+    }
      
       /*FIN BLOQUE 2 */
 
@@ -324,6 +387,33 @@
       });
 
 
+      //Menu pc optimizado.
+
+      //Reconocer la a que pulses diferenciandola de la otra.
+
+      // Ocular o visualizar la seccion hija.
+
+      $(".bloque-uno-menu__pc__left ul li").on('click', 'a', function(){
+
+        //recojo en nombre de la clase pulsada
+       // console.log($('.'+$(this).attr('class')+' span').text());
+        //recojo la clase section hermana 
+       // console.log($('.'+$(this).attr('class')).siblings("section").attr('class'));
+
+        if ($(this).hasClass("activa-pc")) {
+           $(this).removeClass("activa-pc");
+           $(this).siblings("section").css('display', 'none');
+           $(this).find("img").attr("src","images/icon-arrow-down.svg");
+        }else{
+          $(this).addClass("activa-pc");
+          $(this).siblings("section").css('display', 'flex');
+          $(this).find("img").attr("src","images/icon-arrow-up.svg");
+         
+        }
+
+      })
+
+
 
     });
   </script>
@@ -340,39 +430,48 @@
       </section>
 
       <section class="bloque-uno-menu__pc">
-          <!--Imagen-->
-          <img src="\images\logo.svg">
-          <!--menu-->
-          <ul>
-            <li>
-              <a class="bloque-uno-menu__pc__primer" href="#">
-                <span>Features</span>
-                <img src="\images\icon-arrow-down.svg">
-              </a>
-              <section class="bloque-uno-menu__pc_desplegable">
-                <a href="#"><img src="\images\icon-todo.svg"><span>Todo list</span></a>
-                <a href="#"><img src="\images\icon-calendar.svg"><span>Calendar</span></a>
-                <a href="#"><img src="\images\icon-reminders.svg"><span>Reminders</span></a>
-                <a href="#"><img src="\images\icon-planning.svg"><span>Planning</span></a>
-              </section>
-            </li>
-            <li>
-              <a class="bloque-uno-menu__pc__segundo" href="#">
-                <span>Company</span>
-                <img src="\images\icon-arrow-down.svg">
-              </a>
-              <section class="bloque-uno-menu__pc_desplegable--mod">
-                <a class="mod" href="#"><span>History</span></a>
-                <a class="mod" href="#"><span>Our Team</span></a>
-                <a class="mod" href="#"><span>Blog</span></a>
-      
-              </section>
-            </li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
+        <section class="bloque-uno-menu__pc__left">
+            <!--Imagen-->
+            <img src="\images\logo.svg">
+            <!--menu-->
+            <ul>
+              <li>
+                <a class="bloque-uno-menu__pc__primer" href="#">
+                  <span>Features</span>
+                  <img src="\images\icon-arrow-down.svg">
+                </a>
+                <section class="bloque-uno-menu__pc_desplegable">
+                  <a href="#"><img src="\images\icon-todo.svg"><span>Todo list</span></a>
+                  <a href="#"><img src="\images\icon-calendar.svg"><span>Calendar</span></a>
+                  <a href="#"><img src="\images\icon-reminders.svg"><span>Reminders</span></a>
+                  <a href="#"><img src="\images\icon-planning.svg"><span>Planning</span></a>
+                </section>
+              </li>
+              <li>
+                <a class="bloque-uno-menu__pc__segundo" href="#">
+                  <span>Company</span>
+                  <img src="\images\icon-arrow-down.svg">
+                </a>
+                <section class="bloque-uno-menu__pc_desplegable--mod">
+                  <a class="mod" href="#"><span>History</span></a>
+                  <a class="mod" href="#"><span>Our Team</span></a>
+                  <a class="mod" href="#"><span>Blog</span></a>
+        
+                </section>
+              </li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+
+        </section>
 
           <!--botones-->
+          <section class="bloque-uno-menu__pc_btons">
+            <p>Login</p>
+            <button>
+              <p>Register</p>
+            </button>
+          </section>
       </section>
 
     </nav>
